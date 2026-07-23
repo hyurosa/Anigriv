@@ -3,276 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços | Anigriv - Comunicação e Marketing Digital</title>
-    
+    <title>Serviços | Anigriv - Soluções Criativas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="servicos.css">
 </head>
 <body>
-
-    <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">
-                <img src="img/Artboard 2.png" alt="Anigriv Logo" onerror="this.src='https://placehold.co/55x55/6B2D8C/white?text=A'">
-                <div class="logo-text">
-                    <h1>Anigriv</h1>
-                    <p>Comunicação & Marketing Digital</p>
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="img/Artboard 2.png" alt="Anigriv Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%236B2D8C\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><text x=\'50%\' y=\'55%\' fill=\'white\' font-size=\'12\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>A</text></svg>'">
+                    <div class="logo-text">
+                        <h1>Anigriv</h1>
+                        <p>Comunicação & Marketing Digital</p>
+                    </div>
                 </div>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="servicos.html" class="active">Serviços</a></li>
-                <li><a href="index.html#portfolio">Portfólio</a></li>
-                <li><a href="sobre.html">Sobre nós</a></li>
-                <li><a href="contato.html">Contacte-nos</a></li>
-            </ul>
-            <div class="menu-mobile" id="menuMobile">
-                <span></span>
-                <span></span>
-                <span></span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servicos.html" class="active">Serviços</a></li>
+                    <li><a href="index.html#portfolio">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre nós</a></li>
+                    <li><a href="contato.html">Contacte-nos</a></li>
+                </ul>
+                <button id="themeToggle" class="theme-toggle" aria-label="Alternar Tema">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <div class="menu-mobile" id="menuMobile">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <!-- <section class="hero-servicos">
-        <div class="hero-overlay"></div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <span class="tag">✦ Nossos Serviços</span>
-                <h1>Soluções completas<br>para sua marca</h1>
-                <p>Oferecemos serviços personalizados que vão desde o design à estratégia digital.</p>
+    <!-- HERO SECTION ROXO COM IMAGEM DE FUNDO PARCIAL -->
+    <section class="hero-techno-v2">
+        <div class="container hero-v2-content">
+            <div class="badge-v2-container">
+                <span class="badge-line"></span>
+                <!-- <span class="hero-v2-badge">NOSSOS SERVIÇOS</span> -->
             </div>
+            <h2>Serviços para imagem,<br>operação e crescimento.</h2>
+            <p>Da presença institucional online à organização interna da empresa, entregamos soluções com aplicação prática e leitura profissional.</p>
         </div>
-    </section> -->
+    </section>
 
-    <!-- Seção de Serviços -->
-    <section class="servicos-principal">
+    <!-- SEÇÃO DOS 5 CARDS RENOVADOS -->
+    <section class="servicos-v2-grid-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Nossoa Serviços</h2>
-                <p>Conheça nossas soluções e descubra como podemos ajudar sua marca a crescer</p>
-            </div>
+            <div class="servicos-v2-grid">
 
-            <!-- Categorias com animação -->
-            <div class="categorias">
-                <button class="categoria-btn active" data-filter="all">Todos</button>
-                <button class="categoria-btn" data-filter="design">Design</button>
-                <button class="categoria-btn" data-filter="video">Vídeo</button>
-                <button class="categoria-btn" data-filter="marketing">Marketing</button>
-                <button class="categoria-btn" data-filter="web">Web</button>
-            </div>
-
-            <!-- Grid de Serviços -->
-            <div class="servicos-grid" id="servicosGrid">
-                <!-- Serviço 1 - Design Gráfico -->
-                <div class="servico-card" data-category="design">
-                    <div class="servico-img">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600" alt="Design Gráfico">
-                        <div class="servico-overlay">
-                            <div class="servico-icon">🎨</div>
-                        </div>
+                <!-- Card 01 - Produção Audiovisual (COM VÍDEO) -->
+                <div class="card-v2 scroll-reveal">
+                    <div class="card-v2-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="img/Creative workspace, design tools in motion, color swatches, typography elements, promotional materials, professional studio environment, sleek and modern aesthetic, business creative atmosphere.mp4" type="video/mp4">
+                        </video>
+                        <span class="card-v2-ribbon-badge">Audiovisual</span>
                     </div>
-                    <div class="servico-content">
-                        <h3>Design Gráfico</h3>
-                        <p>Criação de peças visuais impactantes que comunicam a essência da sua marca.</p>
-                        <ul class="servico-features">
-                            <li>Identidade Visual</li>
-                            <li>Flyers</li>
-                            <li>Posts</li>
-                            <li>Logos</li>
-                        </ul>
-                        <a href="contato.css" class="servico-link">Solicitar orçamento →</a>
+                    <div class="card-v2-body">
+                        <div class="card-v2-icon-box">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <h3>Produção Audiovisual</h3>
+                        <p class="card-v2-desc">Criação, captação e edição de vídeos profissionais corporativos, comerciais e conteúdos dinâmicos para redes sociais de alto impacto.</p>
+                        <div class="card-v2-features">
+                            <a href="contato.html">→ Vídeos institucionais</a>
+                            <a href="contato.html">→ Anúncios publicitários</a>
+                            <a href="contato.html">→ Reels</a>
+                            <a href="contato.html">→ Edição de vídeos</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Serviço 2 - Vídeos Promocionais -->
-                <div class="servico-card" data-category="video">
-                    <div class="servico-img">
-                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600" alt="Vídeos Promocionais">
-                        <div class="servico-overlay">
-                            <div class="servico-icon">🎬</div>
-                        </div>
+                <!-- Card 02 - Gestão de Tráfego Pago (IMAGEM) -->
+                <div class="card-v2 scroll-reveal">
+                    <div class="card-v2-media">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Gestão de Tráfego Pago">
+                        <span class="card-v2-ribbon-badge">Performance</span>
                     </div>
-                    <div class="servico-content">
-                        <h3>Vídeos Promocionais</h3>
-                        <p>Produção de vídeos profissionais para redes sociais, anúncios e campanhas.</p>
-                        <ul class="servico-features">
-                            <li>Motion Graphics</li>
-                            <li>Edição</li>
-                            <li>Storytelling</li>
-                            <li>Anúncios</li>
-                        </ul>
-                        <a href="contato.css" class="servico-link">Solicitar orçamento →</a>
+                    <div class="card-v2-body">
+                        <div class="card-v2-icon-box">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>Gestão de Tráfego Pago</h3>
+                        <p class="card-v2-desc">Criação e monitorização de anúncios patrocinados focados em conversão no Google Ads, Facebook Ads e Instagram Ads para multiplicar leads.</p>
+                        <div class="card-v2-features">
+                            <a href="contato.html">→ Facebook Ads</a>
+                            <a href="contato.html">→ Instagram Ads</a>
+                            <a href="contato.html">→ Google Ads</a>
+                            <a href="contato.html">→ Youtube Ads</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Serviço 3 - Gestão de Redes Sociais -->
-                <div class="servico-card" data-category="marketing">
-                    <div class="servico-img">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600" alt="Gestão de Redes">
-                        <div class="servico-overlay">
-                            <div class="servico-icon">📱</div>
-                        </div>
+                <!-- Card 03 - Impressão e Produção Gráfica (IMAGEM) -->
+                <div class="card-v2 scroll-reveal">
+                    <div class="card-v2-media">
+                        <img src="img/HartBeat.jpeg" alt="Impressão e Produção Gráfica">
+                        <span class="card-v2-ribbon-badge">Produção</span>
                     </div>
-                    <div class="servico-content">
-                        <h3>Gestão de Redes Sociais</h3>
-                        <p>Estratégia, criação de conteúdo e engajamento para Instagram e Facebook.</p>
-                        <ul class="servico-features">
-                            <li>Planejamento</li>
-                            <li>Criação de Posts</li>
-                            <li>Engajamento</li>
-                            <li>Relatórios</li>
-                        </ul>
-                        <a href="contato.css" class="servico-link">Solicitar orçamento →</a>
+                    <div class="card-v2-body">
+                        <div class="card-v2-icon-box">
+                            <i class="fa-solid fa-print"></i>
+                        </div>
+                        <h3>Impressão & Produção</h3>
+                        <p class="card-v2-desc">Materialização de projetos com acabamentos excelentes, cartões de visita, fardamentos, material promocional e brindes corporativos personalizados.</p>
+                        <div class="card-v2-features">
+                            <a href="contato.html">→ Cartões de visita</a>
+                            <a href="contato.html">→ Brindes personalizados</a>
+                            <a href="contato.html">→ Materiais promocionais</a>
+                            <a href="contato.html">→ Flyers</a>
+                            <!-- <a href="contato.html">→ Brochuras</a>
+                            <a href="contato.html">→ Banners</a>
+                            <a href="contato.html">→ Lonas</a>
+                             <a href="contato.html">→ Rolls-ups</a> -->
+                        </div>
                     </div>
                 </div>
 
-                <!-- Serviço 4 - Marketing Digital -->
-                <div class="servico-card" data-category="marketing">
-                    <div class="servico-img">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Marketing Digital">
-                        <div class="servico-overlay">
-                            <div class="servico-icon">📊</div>
-                        </div>
+                <!-- Card 04 - Marketing Digital (IMAGEM) -->
+                <div class="card-v2 scroll-reveal">
+                    <div class="card-v2-media">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Marketing Digital">
+                        <span class="card-v2-ribbon-badge">Estratégia</span>
                     </div>
-                    <div class="servico-content">
+                    <div class="card-v2-body">
+                        <div class="card-v2-icon-box">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
                         <h3>Marketing Digital</h3>
-                        <p>Campanhas de anúncios, SEO, e-mail marketing e análise de resultados.</p>
-                        <ul class="servico-features">
-                            <li>Tráfego Pago</li>
-                            <li>SEO</li>
-                            <li>E-mail Marketing</li>
-                            <li>Análise de Dados</li>
-                        </ul>
-                        <a href="contato.css" class="servico-link">Solicitar orçamento →</a>
+                        <p class="card-v2-desc">Planeamento estratégico completo de presença digital, posicionamento de marcas, funis automáticos de captação e consultoria em canais online.</p>
+                        <div class="card-v2-features">
+                            <a href="contato.html">→ Criação de conteúdos</a>
+                            <a href="contato.html">→ Gestão de redes sociais</a>
+                            <a href="contato.html">→ Otimização de conversão digital (SEO)</a>
+                            <a href="contato.html">→ Email Marketing</a>
+                            <a href="contato.html">→ Campanhas digitais</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Serviço 5 - Web Design -->
-                <div class="servico-card" data-category="web">
-                    <div class="servico-img">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="Web Design">
-                        <div class="servico-overlay">
-                            <div class="servico-icon">💻</div>
-                        </div>
+                <!-- Card 05 - Design Gráfico (IMAGEM) -->
+                <div class="card-v2 scroll-reveal">
+                    <div class="card-v2-media">
+                        <img src="img/anig3.jpeg" alt="Design Gráfico">
+                        <span class="card-v2-ribbon-badge">Identidade</span>
                     </div>
-                    <div class="servico-content">
-                        <h3>Web Design</h3>
-                        <p>Criação de sites institucionais, lojas virtuais e landing pages responsivas.</p>
-                        <ul class="servico-features">
-                            <li>Sites Responsivos</li>
-                            <li>Lojas Virtuais</li>
-                            <li>Landing Pages</li>
-                            <li>Otimização</li>
-                        </ul>
-                        <a href="contato.css" class="servico-link">Solicitar orçamento →</a>
+                    <div class="card-v2-body">
+                        <div class="card-v2-icon-box">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h3>Design Gráfico</h3>
+                        <p class="card-v2-desc">Construção de identidades visuais exclusivas, criação de logótipos memoráveis, artes para redes sociais e design de embalagens eficientes.</p>
+                        <div class="card-v2-features">
+                            <a href="contato.html">→ Logótipos</a>
+                            <a href="contato.html">→ Identidade visual</a>
+                            <a href="contato.html">→ Artes para redes sociais</a>
+                            <a href="contato.html">→ Cartazes</a>
+                            <a href="contato.html">→ Peças publicitárias</a>
+                            <a href="contato.html">→ Apresentações Corporativas</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Serviço 6 - Fotografia Profissional -->
-                <div class="servico-card" data-category="design">
-                    <div class="servico-img">
-                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600" alt="Fotografia">
-                        <div class="servico-overlay">
-                            <div class="servico-icon">📷</div>
-                        </div>
-                    </div>
-                    <div class="servico-content">
-                        <h3>Fotografia Profissional</h3>
-                        <p>Ensaios fotográficos para produtos, marcas e conteúdo digital de alta qualidade.</p>
-                        <ul class="servico-features">
-                            <li>Produtos</li>
-                            <li>Eventos</li>
-                            <li>Retratos</li>
-                            <li>Editorial</li>
-                        </ul>
-                        <a href="contato.css" class="servico-link">Solicitar orçamento →</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Diferenciais -->
-    <section class="diferenciais">
-        <div class="container">
-            <div class="section-header">
-                <span class="subtitle">Por que nos escolher</span>
-                <h2>Nossos Diferenciais</h2>
-            </div>
-            <div class="diferenciais-grid">
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">⚡</div>
-                    <h4>Agilidade</h4>
-                    <p>Entregamos seus projetos no prazo combinado, com qualidade e eficiência.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">🎯</div>
-                    <h4>Estratégia</h4>
-                    <p>Planejamento personalizado para alcançar os melhores resultados.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">💡</div>
-                    <h4>Criatividade</h4>
-                    <p>Soluções inovadoras que destacam sua marca no mercado.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="diferencial-icon">📈</div>
-                    <h4>Resultados</h4>
-                    <p>Foco em métricas e crescimento real do seu negócio.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="img/Artboard 2.png" alt="Anigriv Logo">
+                <div class="footer-column brand-info">
+                    <div class="footer-logo">
+                        <img src="img/Artboard 2.png" alt="Anigriv Logo">
+                    </div>
                     <p>Comunicação e Marketing Digital que transformam ideias em resultados.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/profile.php?id=61590238301459" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a> 
+                        <a href="https://www.instagram.com/anigriv.mz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>    
+                        <a href="https://www.tiktok.com/@anigriv_mz?lang=pt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a> 
+                        <a href="https://www.linkedin.com/company/anigriv_mz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-column">
-                    <h4>Serviços</h4>
-                    <a href="#">Design Gráfico</a>
-                    <a href="#">Vídeos Promocionais</a>
-                    <a href="#">Gestão de Redes Sociais</a>
-                    <a href="#">Marketing Digital</a>
-                    <a href="#">Web Design</a>
-                    <a href="#">Fotografia</a>
-                </div>
-                <div class="footer-column">
-                    <h4>Links Rápidos</h4>
-                    <a href="index.html">Home</a>
-                    <a href="sobre.html">Sobre nós</a>
-                    <a href="servicos.html">Serviços</a>
-                    <a href="contato.html">Contacto</a>
-                </div>
+
                 <div class="footer-column">
                     <h4>Contacto</h4>
-                    <a href="tel:+258843799612">+258 84 379 9612</a>
-                    <a href="mailto:info@anigriv.co.mz">info@anigriv.co.mz</a>
-                    <a href="#">Maputo, Moçambique</a>
+                    <div class="footer-contact-item" onclick="window.location.href='tel:+258842504825'">
+                        <i class="fa-solid fa-phone footer-icon-fa"></i>
+                        <span>+258 84 250 4825</span>
+                    </div>
+                    <div class="footer-contact-item" onclick="window.location.href='mailto:designer@anigriv.co.mz'">
+                        <i class="fa-solid fa-envelope footer-icon-fa"></i>
+                        <span>designer@anigriv.co.mz</span>
+                    </div>
+                    <div class="footer-contact-item schedule-item">
+                        <i class="fa-solid fa-clock footer-icon-fa"></i>
+                        <span>Seg - Sex: 8h às 17h</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Navegação</h4>
+                    <a href="sobre.html">Sobre Nós</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="index.html#portfolio">Portfólio</a>
+                    <a href="contato.html">Contacte-nos</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Localização</h4>
+                    <div class="footer-contact-item no-click">
+                        <i class="fa-solid fa-location-dot footer-icon-fa"></i>
+                        <span>Rua Coronel Aurélio Manave, Nº 178 Maputo</span>
+                    </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Anigriv | Comunicação & Marketing Digital. Todos os direitos reservados.</p>
+                <p>© 2026 Anigriv. Todos os direitos reservados.</p>
+                <a href="https://www.braintech.co.mz" target="_blank" rel="noopener noreferrer" class="footer-credits-link">
+                    <div class="footer-credits">
+                        <span>Desenvolvido Pela</span>
+                        <div class="credits-logo">
+                            <img src="img/logo-braintech.png" alt="Braintech Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23bfa6d1\'><path d=\'M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.79-2.79C10.09 18.64 11.03 19 12 19c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z\'/></svg>'">
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/258843799612" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/258842504825" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
         <img src="img/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/1384/1384023.png'">
     </a>
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
     
-    <!-- Back to Top -->
-    <button id="backToTop" class="back-to-top">↑</button>
-<script src="servicos.js"></script>
+    <script src="servicos.js"></script>
 </body>
 </html>

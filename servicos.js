@@ -1,99 +1,63 @@
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- GERENCIAMENTO DE TEMA (DARK / LIGHT) ---
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
 
+    if (localStorage.getItem('theme') === 'dark') { 
+        body.classList.add('dark-mode'); 
+    }
 
-        // Menu Mobile
-        const menuMobile = document.getElementById('menuMobile');
-        const navLinks = document.getElementById('navLinks');
-        
-        if (menuMobile) {
-            menuMobile.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        }
-        
-        // Back to Top
-        const backToTop = document.getElementById('backToTop');
-        
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+    }
+
+    // --- MENU MOBILE ---
+    const menuMobile = document.getElementById('menuMobile');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (menuMobile && navLinks) {
+        menuMobile.addEventListener('click', () => {
+            menuMobile.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // --- BOTÃO VOLTAR AO TOPO (BACK TO TOP) ---
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.style.display = 'flex';
-            } else {
-                backToTop.style.display = 'none';
-            }
+            backToTop.style.display = window.scrollY > 300 ? 'flex' : 'none';
         });
-        
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        backToTop.addEventListener('click', () => { 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
         });
-        
-        // Animação de entrada dos cards
+    }
+    
+    // --- ANIMAÇÃO SCROLL REVEAL (INTERSECTION OBSERVER) ---
+    const servicoCards = document.querySelectorAll('.scroll-reveal');
+    
+    if (servicoCards.length > 0) {
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            root: null, 
+            threshold: 0.1, 
+            rootMargin: "0px 0px -20px 0px"
         };
-        
-        const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
+
+        const servicoObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('animate');
-                    }, index * 100);
-                    cardObserver.unobserve(entry.target);
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
-        
-        document.querySelectorAll('.servico-card').forEach((card, index) => {
-            card.style.transitionDelay = `${index * 0.1}s`;
-            cardObserver.observe(card);
+
+        servicoCards.forEach(card => {
+            servicoObserver.observe(card);
         });
-        
-        // Animação dos diferenciais
-        const diffObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('animate');
-                    }, index * 150);
-                    diffObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.diferencial-item').forEach((item, index) => {
-            item.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-            item.style.transitionDelay = `${index * 0.1}s`;
-            diffObserver.observe(item);
-        });
-        
-        // Filtro por categoria
-        const filterButtons = document.querySelectorAll('.categoria-btn');
-        const cards = document.querySelectorAll('.servico-card');
-        
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active de todos
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                cards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                        card.style.animation = 'rotateIn 0.5s ease';
-                        setTimeout(() => {
-                            card.style.animation = '';
-                        }, 500);
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Fechar menu ao clicar em link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
+    }
+});

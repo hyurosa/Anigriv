@@ -7,278 +7,316 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header com fundo roxo -->
     <header>
-       <nav class="container">
-            <div class="logo">
-                <img src="./img/Artboard 2.png" alt="Anigriv Logo" onerror="this.src='https://placehold.co/55x55/6B2D8C/white?text=A'">
-                <div class="logo-text">
-                    <h1>Anigriv</h1>
-                    <p>Comunicação & Marketing Digital</p>
+        <nav class="container">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="img/Artboard 2.png" alt="Anigriv Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%236B2D8C\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><text x=\'50%\' y=\'55%\' fill=\'white\' font-size=\'12\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>A</text></svg>'">
+                    <div class="logo-text">
+                        <h1>Anigriv</h1>
+                        <p>Comunicação & Marketing Digital</p>
+                    </div>
                 </div>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-            
-            <!-- ADICIONE ESTE BOTÃO AQUI -->
-            <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
-                <span class="icon-sun">☀️</span>
-                <span class="icon-moon">🌙</span>
-            </button>
-            
-            <!-- O seu botão .menu-mobile existente fica aqui embaixo -->
-            <div class="menu-mobile">
-                <span></span>
-                <span></span>
-                <span></span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servicos.html" class="active">Serviços</a></li>
+                    <li><a href="index.html#portfolio">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre nós</a></li>
+                    <li><a href="contato.html">Contacte-nos</a></li>
+                </ul>
+                <button id="themeToggle" class="theme-toggle" aria-label="Alternar Tema">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <div class="menu-mobile" id="menuMobile">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section com Vídeo Background -->
     <section id="home" class="hero">
         <div class="hero-video-background">
             <video autoplay loop muted playsinline id="heroVideo">
                 <source src="img/Creative workspace, design tools in motion, color swatches, typography elements, promotional materials, professional studio environment, sleek and modern aesthetic, business creative atmosphere.mp4" type="video/mp4">
-                <source src="https://cdn.coverr.co/videos/coverr-abstract-purple-waves-5420/coverr-abstract-purple-waves-5420.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos HTML5.
             </video>
         </div>
         <div class="hero-overlay"></div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <span class="tag fade-up">✦ Comunicação & Marketing Digital</span>
-                <h1 class="fade-up">
-                    Transformamos ideias em<br>
-                    <span class="highlight">resultados criativos</span>
-                </h1>
-                <p class="fade-up">Design, marketing digital e gestão de redes sociais. Criamos soluções visuais que conectam sua marca ao público certo com criatividade e estratégia.</p>
-                <div class="hero-buttons fade-up">
-                    <a href="contato.html" class="btn-primary">Começar Projeto →</a>
-                    <a href="#portfolio" class="btn-secondary">Ver Portfólio</a>
-                </div>
-               
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- Serviços -->
-    <section id="servicos" class="servicos">
+    <section class="servicos" id="servicos">
         <div class="container">
             <div class="section-header">
-  
                 <h2>Nossos Serviços</h2>
+                <!-- <p>Explore as nossas especialidades através da nossa vitrine interativa tridimensional.</p> -->
             </div>
-            <div class="servicos-grid">
-    <!-- PRIMEIRO GRUPO (Original) -->
-    <div class="servicos-track">
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="img/pexels-mutecevvil-17681366.jpg" alt="Design Gráfico"></a></div>
-            <div class="servico-content"><h3>Design Gráfico</h3><p>Criação de flyers, posts, identidade visual, logos e materiais promocionais.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="img/pexels-rohit-sharma-1230131-19504042.jpg" alt="Vídeos Promocionais"></a></div>
-            <div class="servico-content"><h3>Vídeos Promocionais</h3><p>Produção de vídeos profissionais para redes sociais, anúncios e campanhas.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600" alt="Gestão de Redes Sociais"></a></div>
-            <div class="servico-content"><h3>Gestão de Redes Sociais</h3><p>Estratégia, criação de conteúdo e engajamento para Instagram e Facebook.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="img/markt.webp" alt="Marketing Digital"></a></div>
-            <div class="servico-content"><h3>Marketing Digital</h3><p>Campanhas de anúncios, SEO, e-mail marketing e análise de resultados.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="img/wp2141414-web-design-wallpapers.jpg" alt="Web Design"></a></div>
-            <div class="servico-content"><h3>Web Design</h3><p>Criação de sites institucionais, lojas virtuais e landing pages.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="img/fot.jpg" alt="Fotografia Profissional"></a></div>
-            <div class="servico-content"><h3>Fotografia Profissional</h3><p>Ensaios fotográficos para produtos, marcas e conteúdo digital.</p></div>
-        </div>
-    </div>
 
-    <!-- SEGUNDO GRUPO (Cópia idêntica para o efeito infinito) -->
-    <div class="servicos-track">
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="img/pexels-mutecevvil-17681366.jpg" alt="Design Gráfico"></a></div>
-            <div class="servico-content"><h3>Design Gráfico</h3><p>Criação de flyers, posts, identidade visual, logos e materiais promocionais.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="img/pexels-rohit-sharma-1230131-19504042.jpg" alt="Vídeos Promocionais"></a></div>
-            <div class="servico-content"><h3>Vídeos Promocionais</h3><p>Produção de vídeos profissionais para redes sociais, anúncios e campanhas.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600" alt="Gestão de Redes Sociais"></a></div>
-            <div class="servico-content"><h3>Gestão de Redes Sociais</h3><p>Estratégia, criação de conteúdo e engajamento para Instagram e Facebook.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"></a><img src="img/markt.webp" alt="Marketing Digital"></div>
-            <div class="servico-content"><h3>Marketing Digital</h3><p>Campanhas de anúncios, SEO, e-mail marketing e análise de resultados.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="img/wp2141414-web-design-wallpapers.jpg" alt="Web Design"></a></div>
-            <div class="servico-content"><h3>Web Design</h3><p>Criação de sites institucionais, lojas virtuais e landing pages.</p></div>
-        </div>
-        <div class="servico-card">
-            <div class="servico-img"><a href="servicos.html"><img src="img/fot.jpg" alt="Fotografia Profissional"></a></div>
-            <div class="servico-content"><h3>Fotografia Profissional</h3><p>Ensaios fotográficos para produtos, marcas e conteúdo digital.</p></div>
-        </div>
-    </div>
-</div>
+            <div class="card-stack-container">
+                <div class="spotlight"></div>
+                <div class="stage" id="servicesStage" tabindex="0"></div>
+                <div class="dots-container" id="servicesDotsContainer"></div>
+            </div>
         </div>
     </section>
 
     <section id="portfolio">
-    <div class="container">
-        <div class="pa-inner">
-    
-        <div class="pa-left">
-            <span class="eyebrow">Nosso trabalho</span>
-            <h2 class="dyn-title fade-swap" id="dyn-title">Projetos Recentes</h2>
-            <span class="dyn-cat fade-swap" id="dyn-cat">Portfólio</span>
-            <p class="dyn-desc fade-swap" id="dyn-desc">Passe o cursor sobre cada projeto para explorar o nosso trabalho criativo.</p>
-            <div class="divider"></div>
-            <button class="view-btn">Ver projeto →</button>
+        <div class="container">
+            <div class="pa-inner">
+                <div class="pa-left">
+                    <span class="eyebrow">Nosso trabalho</span>
+                    <h2 class="dyn-title fade-swap" id="dyn-title">Projetos Recentes</h2>
+                    <span class="dyn-cat fade-swap" id="dyn-cat">Portfólio</span>
+                    <p class="dyn-desc fade-swap" id="dyn-desc">Passe o cursor sobre cada projeto para explorar o nosso trabalho criativo.</p>
+                    <div class="divider"></div>
+                    <button class="view-btn">Ver projeto →</button>
+                </div>
+
+                <div class="pa-right" id="pa-right">          
+                    <div class="pa-card active" data-title="Flyer Promocional Black Friday" data-cat="Design Gráfico" data-desc="Transformamos ideias em formas e cores. Design minimalista, elegante e sob medida que torna a sua marca inesquecível.">
+                        <img src="img/HartBeat.jpeg" alt="Flyer">
+                        <div class="pa-card-overlay"></div>
+                        <div class="pa-card-label">
+                            <span class="lbl-num">01</span>
+                            <span class="lbl-dot"></span>
+                            <span class="lbl-name">Flyer Black Friday</span>
+                        </div>
+                    </div>
+
+                    <div class="pa-card" data-title="Vídeo Promocional" data-cat="Vídeo Promocional" data-desc="Gravação, edição, direção de arte e pós-produção de vídeos institucionais e promocionais.">
+                        <video autoplay loop muted playsinline class="portfolio-video">
+                            <source src="img/Creative workspace, design tools in motion, color swatches, typography elements, promotional materials, professional studio environment, sleek and modern aesthetic, business creative atmosphere.mp4" type="video/mp4">
+                        </video>
+                        <div class="pa-card-overlay"></div>
+                        <div class="pa-card-label">
+                            <span class="lbl-num">02</span>
+                            <span class="lbl-dot"></span>
+                            <span class="lbl-name">Vídeo Promocional</span>
+                        </div>
+                    </div>
+
+                    <div class="pa-card" data-title="Posicionamento de Redes Sociais" data-cat="Gestão de Redes Sociais" data-desc="Gestão de presença digital baseada em dados, com foco no fortalecimento de marca, consistência e relacionamento com clientes.">
+                        <img src="img/portani.jpeg" alt="Social">
+                        <div class="pa-card-overlay"></div>
+                        <div class="pa-card-label">
+                            <span class="lbl-num">03</span>
+                            <span class="lbl-dot"></span>
+                            <span class="lbl-name">Posts Instagram</span>
+                        </div>
+                    </div>
+
+                    <div class="pa-card" data-title="Identidade Visual Corporativa" data-cat="Branding & Design" data-desc="Construção de ecossistemas visuais completos: logótipos minimalistas, paleta de cores psicológica, tipografia institucional e manual de marca. Um design intemporal criado para transmitir os valores, a seriedade e o profissionalismo da empresa.">
+                        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800" alt="Branding">
+                        <div class="pa-card-overlay"></div>
+                        <div class="pa-card-label">
+                            <span class="lbl-num">04</span>
+                            <span class="lbl-dot"></span>
+                            <span class="lbl-name">Identidade Visual</span>
+                        </div>
+                    </div>
+
+                    <div class="pa-card" data-title="Campanhas de Tráfego Pago" data-cat="Marketing Digital" data-desc="Consultoria de marketing, análise de presença digital, funis de vendas e estratégias de crescimento online.">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="Marketing">
+                        <div class="pa-card-overlay"></div>
+                        <div class="pa-card-label">
+                            <span class="lbl-num">05</span>
+                            <span class="lbl-dot"></span>
+                            <span class="lbl-name">Campanha Marketing</span>
+                        </div>
+                    </div>
+
+                    <div class="pa-card" data-title="Plataformas & Sites" data-cat="Produção Gráfica" data-desc="Damos vida física aos seus projetos digitais com texturas, acabamentos especiais e uma paixão obsessiva pela fidelidade das cores.">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800" alt="Web">
+                        <div class="pa-card-overlay"></div>
+                        <div class="pa-card-label">
+                            <span class="lbl-num">06</span>
+                            <span class="lbl-dot"></span>
+                            <span class="lbl-name">Site Institucional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <button id="backToTop" class="back-to-top">↑</button>
+
+   
+
+    <!-- --- SEÇÃO PARCEIROS E CLIENTES --- -->
+<section class="partners-section">
+    <h2>Parceiros</h2>
     
-        <div class="pa-right" id="pa-right">
-    
-            <div class="pa-card active"
-            data-title="Flyer Promocional Black Friday"
-            data-cat="Design Gráfico"
-            data-desc="Criação de peça visual impactante para campanha de Black Friday com forte apelo comercial.">
-            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600" alt="Flyer">
-            <div class="pa-card-overlay"></div>
-            <div class="pa-card-label">
-                <span class="lbl-num">01</span>
-                <span class="lbl-dot"></span>
-                <span class="lbl-name">Flyer Black Friday</span>
+    <div class="partners-carousel">
+        <div class="partners-track">
+            <!-- Primeira sequência de logos com links -->
+            <div class="partner-logo">
+                <a href="https://www.vm.co.mz" target="_blank" rel="noopener noreferrer">
+                    <img src="img/voda.jpg" alt="Vodacom">
+                </a>
             </div>
+            <div class="partner-logo">
+                <a href="https://www.milleniumtravel.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/Logo millenium travels 2 (1).png" alt="Millenium Travel">
+                </a>
             </div>
-    
-            <div class="pa-card"
-            data-title="Vídeo Institucional"
-            data-cat="Vídeo Promocional"
-            data-desc="Produção audiovisual completa para apresentação da marca com narrativa envolvente e cinematográfica.">
-            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600" alt="Vídeo">
-            <div class="pa-card-overlay"></div>
-            <div class="pa-card-label">
-                <span class="lbl-num">02</span>
-                <span class="lbl-dot"></span>
-                <span class="lbl-name">Vídeo Institucional</span>
+            <div class="partner-logo">
+                <a href="https://www.milleniumbim.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/millenium bim.png" alt="Millenium BIM">
+                </a>
             </div>
+            <div class="partner-logo">
+                <a href="https://www.standardbank.co.mz" target="_blank" rel="noopener noreferrer">
+                    <img src="img/standard bank.png" alt="Standard Bank">
+                </a>
             </div>
-    
-            <div class="pa-card"
-            data-title="Posts para Instagram"
-            data-cat="Gestão de Redes Sociais"
-            data-desc="Série de posts criativos e estratégicos para maximizar o engajamento e alcance no Instagram.">
-            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600" alt="Social">
-            <div class="pa-card-overlay"></div>
-            <div class="pa-card-label">
-                <span class="lbl-num">03</span>
-                <span class="lbl-dot"></span>
-                <span class="lbl-name">Posts Instagram</span>
+            <div class="partner-logo">
+                <a href="https://www.mcel.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/mcel.png" alt="Tmcel">
+                </a>
             </div>
+            <div class="partner-logo">
+                <a href="https://www.movitel.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/movitel.webp" alt="Movitel">
+                </a>
             </div>
-    
-            <div class="pa-card"
-            data-title="Identidade Visual Completa"
-            data-cat="Branding"
-            data-desc="Desenvolvimento de identidade de marca do zero: logo, paleta, tipografia e manual de uso.">
-            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600" alt="Branding">
-            <div class="pa-card-overlay"></div>
-            <div class="pa-card-label">
-                <span class="lbl-num">04</span>
-                <span class="lbl-dot"></span>
-                <span class="lbl-name">Identidade Visual</span>
+            <div class="partner-logo">
+                <a href="https://www.bci.co.mz" target="_blank" rel="noopener noreferrer">
+                    <img src="img/bci-logo-web-30-anos.svg" alt="BCI">
+                </a>
             </div>
+            <div class="partner-logo">
+                <a href="https://www.hartbeat.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/HartBeat.jpeg" alt="Hartbeat">
+                </a>
             </div>
-    
-            <div class="pa-card"
-            data-title="Campanha de Marketing"
-            data-cat="Marketing Digital"
-            data-desc="Estratégia e execução de campanha multicanal com foco em conversão e reconhecimento de marca.">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Marketing">
-            <div class="pa-card-overlay"></div>
-            <div class="pa-card-label">
-                <span class="lbl-num">05</span>
-                <span class="lbl-dot"></span>
-                <span class="lbl-name">Campanha Marketing</span>
+
+            <!-- Duplicação idêntica para manter o efeito infinito fluido e sem saltos -->
+            <div class="partner-logo">
+                <a href="https://www.vm.co.mz" target="_blank" rel="noopener noreferrer">
+                    <img src="img/voda.jpg" alt="Vodacom">
+                </a>
             </div>
+            <div class="partner-logo">
+                <a href="https://www.milleniumtravel.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/Logo millenium travels 2 (1).png" alt="Millenium Travel">
+                </a>
             </div>
-    
-            <div class="pa-card"
-            data-title="Site Institucional"
-            data-cat="Web Design"
-            data-desc="Design e desenvolvimento de site moderno, responsivo e otimizado para conversão e SEO.">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="Web">
-            <div class="pa-card-overlay"></div>
-            <div class="pa-card-label">
-                <span class="lbl-num">06</span>
-                <span class="lbl-dot"></span>
-                <span class="lbl-name">Site Institucional</span>
+            <div class="partner-logo">
+                <a href="https://www.milleniumbim.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/millenium bim.png" alt="Millenium BIM">
+                </a>
             </div>
+            <div class="partner-logo">
+                <a href="https://www.standardbank.co.mz" target="_blank" rel="noopener noreferrer">
+                    <img src="img/standard bank.png" alt="Standard Bank">
+                </a>
             </div>
-    
-        </div>
+            <div class="partner-logo">
+                <a href="https://www.mcel.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/mcel.png" alt="Tmcel">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://www.movitel.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/movitel.webp" alt="Movitel">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://www.bci.co.mz" target="_blank" rel="noopener noreferrer">
+                    <img src="img/bci-logo-web-30-anos.svg" alt="BCI">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://www.hartbeat.com" target="_blank" rel="noopener noreferrer">
+                    <img src="img/HartBeat.jpeg" alt="Hartbeat">
+                </a>
+            </div>
         </div>
     </div>
 </section>
-
-  
-    <!-- WhatsApp Button com Imagem -->
-<a href="https://wa.me/258843799612" class="whatsapp-btn" target="_blank">
-    <img src="img/logo sapp.png" alt="WhatsApp" class="whatsapp-img">
-</a>
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">↑</button>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="./img/Artboard 2.png" alt="Anigriv Logo" onerror="this.src='https://placehold.co/60x60/6B2D8C/white?text=LOGO'">
-                    <p>Uma empresa de Comunicação e Marketing Digital que transformam ideias em resultados.</p>
+                <div class="footer-column brand-info">
+                    <div class="footer-logo">
+                        <img src="img/Artboard 2.png" alt="Anigriv Logo">
+                    </div>
+                    <p>Comunicação e Marketing Digital que transformam ideias em resultados.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/profile.php?id=61590238301459" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a> 
+                        <a href="https://www.instagram.com/anigriv.mz/ " target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>    
+                        <a href="https://www.tiktok.com/@anigriv_mz?lang=pt " target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a> 
+                        <a href="https://www.linkedin.com/company/anigriv_mz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="footer-column">
                     <h4>Contacto</h4>
-                    <a>+258 843799612</a>
-                    <a>info@anigriv.co.mz</a>
-                    <a>Seg - Sex: 8h às 17h</a>
+                    <div class="footer-contact-item" onclick="window.location.href='tel:+258842504825'">
+                        <i class="fa-solid fa-phone footer-icon-fa"></i>
+                        <span>+258 84 250 4825</span>
+                    </div>
+                    <div class="footer-contact-item" onclick="window.location.href='mailto:designer@anigriv.co.mz'">
+                        <i class="fa-solid fa-envelope footer-icon-fa"></i>
+                        <span>designer@anigriv.co.mz</span>
+                    </div>
+                    <div class="footer-contact-item schedule-item">
+                        <i class="fa-solid fa-clock footer-icon-fa"></i>
+                        <span>Seg - Sex: 8h às 17h</span>
+                    </div>
                 </div>
+
                 <div class="footer-column">
-                    <h4>Sobre Nós</h4>
-                    <a href="sobre.html">Sobre Nós</a>  
+                    <h4>Navegação</h4>
+                    <a href="sobre.html">Sobre Nós</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="index.html#portfolio">Portfólio</a>
+                    <a href="contato.html">Contacte-nos</a>
                 </div>
+
                 <div class="footer-column">
                     <h4>Localização</h4>
-                    <a href="#">Rua Coronel Aurélio Manave, Nº 178,
-Maputo, Moçambique</a>
-                    <!--<a href="#">Termos de Uso</a>-->
+                    <div class="footer-contact-item no-click">
+                        <i class="fa-solid fa-location-dot footer-icon-fa"></i>
+                        <span>Rua Coronel Aurélio Manave, Nº 178 Maputo</span>
+                    </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Website desenvolvido pela Braintech. Todos os direitos reservados.</p>
+                <p>© 2026 Anigriv. Todos os direitos reservados.</p>
+                <a href="https://www.braintech.co.mz" target="_blank" rel="noopener noreferrer" class="footer-credits-link">
+                    <div class="footer-credits">
+                        <span>Desenvolvido Pela</span>
+                        <div class="credits-logo">
+                            <img src="img/logo-braintech.png" alt="Braintech Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23bfa6d1\'><path d=\'M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.79-2.79C10.09 18.64 11.03 19 12 19c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z\'/></svg>'">
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <a href="https://wa.me/258842504825" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <img src="img/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/1384/1384023.png'">
+    </a>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,750 +1,244 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacte-nos | Anigriv - Comunicação e Marketing Digital</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #230433;
-            --primary-dark: #4A1D63;
-            --primary-light: #9B4DCA;
-            --primary-soft: #E8D5F5;
-            --secondary: #F3E8FF;
-            --white: #ffffff;
-            --gradient-primary: linear-gradient(135deg, #6B2D8C 0%, #4A1D63 100%);
-            --gradient-secondary: linear-gradient(135deg, #E8D5F5 0%, #D4B8E8 100%);
-            --text-dark: #2D1B3D;
-            --text-light: #6B4B8A;
-            --success: #10B981;
-            --error: #EF4444;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            background: var(--primary);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px 20px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-        }
-
-        .logo-text h1 {
-            font-size: 1.3rem;
-            color: white;
-        }
-
-        .logo-text p {
-            font-size: 0.7rem;
-            color: var(--primary-soft);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary-soft);
-        }
-
-        .menu-mobile {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-mobile span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero-contato {
-            position: relative;
-            min-height: 40vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            margin-top: 80px;
-            background: var(--gradient-primary);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(35, 4, 51, 0.7);
-            z-index: 1;
-        }
-
-        .hero-contato .container {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-        }
-
-        .hero-content {
-            color: var(--white);
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .hero-content .tag {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Seção de Contato */
-        .contato-principal {
-            padding: 80px 0;
-            background: var(--gradient-secondary);
-        }
-
-        .contato-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        /* Descrição da Empresa */
-        .descricao-card {
-            background: white;
-            border-radius: 30px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-        }
-
-        .descricao-card h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .descricao-card p {
-            color: var(--text-dark);
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .descricao-card .destaque {
-            font-weight: 600;
-            color: var(--primary-light);
-            margin-top: 15px;
-        }
-
-        /* Informações de Contato com Imagens */
-        .info-card {
-            background: white;
-            border-radius: 30px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-
-        .info-card h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            padding: 15px 0;
-            border-bottom: 1px solid #e5e7eb;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .info-item:last-child {
-            border-bottom: none;
-        }
-
-        .info-item:hover {
-            transform: translateX(8px);
-            background: var(--secondary);
-            padding-left: 15px;
-            border-radius: 12px;
-        }
-
-        /* Estilo para as imagens dos ícones */
-        .info-icon-img {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-            transition: all 0.3s;
-        }
-
-        .info-item:hover .info-icon-img {
-            transform: scale(1.1);
-        }
-
-        .info-details p {
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        .info-details .small {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            font-weight: normal;
-        }
-
-        /* Mapa */
-        .mapa-card {
-            background: white;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-
-        .mapa-card iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-        }
-
-        .mapa-info {
-            padding: 20px;
-            text-align: center;
-            background: var(--secondary);
-        }
-
-        .mapa-info p {
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        .mapa-footer {
-            padding: 15px 20px;
-            background: white;
-            border-top: 1px solid #e5e7eb;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-            font-size: 0.75rem;
-            color: var(--text-light);
-        }
-
-        .mapa-footer span {
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .mapa-footer span:hover {
-            color: var(--primary-light);
-        }
-
-        /* Locais Próximos */
-        .locais-proximos {
-            margin-top: 25px;
-        }
-
-        .locais-title {
-            font-size: 0.9rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .locais-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .local-tag {
-            background: var(--primary-soft);
-            color: var(--primary);
-            padding: 6px 14px;
-            border-radius: 25px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .local-tag:hover {
-            background: var(--primary-light);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #2D1B3D 0%, #1A0F26 100%);
-            color: white;
-            padding: 50px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .footer-logo img {
-            width: 60px;
-            height: 60px;
-            filter: brightness(0) invert(1);
-        }
-
-        .footer-logo p {
-            margin-top: 10px;
-            color: #999;
-            line-height: 1.6;
-        }
-
-        .footer-column h4 {
-            margin-bottom: 20px;
-            color: var(--primary-soft);
-        }
-
-        .footer-column a {
-            display: block;
-            color: #999;
-            text-decoration: none;
-            margin-bottom: 10px;
-            transition: all 0.3s;
-        }
-
-        .footer-column a:hover {
-            color: var(--primary-soft);
-            transform: translateX(5px);
-        }
-
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            color: #999;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .footer-contact-item:hover {
-            color: var(--primary-soft);
-            transform: translateX(5px);
-        }
-
-        .footer-contact-item .footer-icon {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-            filter: brightness(0) invert(0.6);
-            transition: all 0.3s;
-        }
-
-        .footer-contact-item:hover .footer-icon {
-            filter: brightness(0) invert(0.8);
-            transform: scale(1.1);
-        }
-
-        .footer-contact-item span {
-            font-size: 0.85rem;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #999;
-            font-size: 0.85rem;
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 100;
-            animation: pulse 2s infinite;
-            transition: all 0.3s;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
-        }
-
-        .whatsapp-img {
-            width: 35px;
-            height: 35px;
-            object-fit: contain;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: var(--gradient-primary);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            display: none;
-            transition: all 0.3s;
-            z-index: 100;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                right: 0;
-                background: var(--primary);
-                flex-direction: column;
-                padding: 20px;
-                text-align: center;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .menu-mobile {
-                display: flex;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .contato-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .mapa-footer {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .info-item:hover {
-                transform: translateX(0);
-            }
-        }
-    </style>
+    <!-- Cole esta linha dentro do <head> do seu contato.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="contato.css">
+
+<!-- Garanta que a sua lista <ul> da navbar segue os nomes idênticos aos da imagem: -->
+<ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="servicos.html">Serviços</a></li>
+    <li><a href="index.html#portfolio">Portfólio</a></li>
+    <li><a href="sobre.html">Sobre nós</a></li>
+    <li><a href="contato.html" class="active">Contacte-nos</a></li>
+</ul>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <img src="img/Artboard 2.png" alt="Anigriv Logo" onerror="this.src='https://placehold.co/55x55/6B2D8C/white?text=A'">
-                <div class="logo-text">
-                    <h1>Anigriv</h1>
-                    <p>Comunicação & Marketing Digital</p>
+     <header>
+            <nav class="container">
+                 <a href="index.html" class="logo-link">
+                     <div class="logo">
+                        <img src="img/Artboard 2.png" alt="Anigriv Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%236B2D8C\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><text x=\'50%\' y=\'55%\' fill=\'white\' font-size=\'12\' font-family=\'sans-serif\' text-anchor=\'middle\' dominant-baseline=\'middle\'>A</text></svg>'">
+                     <div class="logo-text">
+                             <h1>Anigriv</h1>
+                             <p>Comunicação & Marketing Digital</p>
+                     </div>
+                     </div>
+                 </a>
+                <div class="nav-right">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="index.html#portfolio">Portfólio</a></li>
+                        <li><a href="sobre.html" class="active">Sobre nós</a></li>
+                        <li><a href="contato.html">Contacte-nos</a></li>
+                    </ul>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Alternar Tema">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                    <div class="menu-mobile" id="menuMobile">
+                        <span></span><span></span><span></span>
+                    </div>
                 </div>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="index.html#portfolio">Portfólio</a></li>
-                <li><a href="sobre.html">Sobre nós</a></li>
-                <li><a href="contato.html" class="active">Contacte-nos</a></li>
-            </ul>
-            <div class="menu-mobile" id="menuMobile">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-contato">
-        <div class="hero-overlay"></div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <span class="tag">✦ Contacte-nos</span>
-                <h1>Vamos transformar<br>sua marca juntos</h1>
-                <p>Criatividade, estratégia e resultados para o seu negócio.</p>
-            </div>
+            </nav>
+        </header>
+    <!-- SECÇÃO HERO (Inspirada na image_6fe795.png) -->
+   <section class="hero-contato-novo" style="background-image: url('img/markt.webp');">
+        <div class="hero-overlay-camada"></div> <div class="container hero-content-relative">
+            <!-- <div class="tag-badge">Contactos</div> -->
+            <h1>Fale connosco sobre o seu próximo projecto digital.</h1>
+            <p>Estamos preparados para analisar necessidades, propor soluções e estruturar uma resposta ajustada ao seu contexto.</p>
         </div>
     </section>
 
-    <!-- Conteúdo Principal -->
-    <section class="contato-principal">
-        <div class="container">
-            <div class="contato-grid">
-                <!-- Coluna Esquerda -->
-                <div>
-                    <!-- Descrição da Empresa -->
-                    <div class="descricao-card">
-                        <h2>Anigriv</h2>
-                        <p>Uma empresa de Comunicação e Marketing Digital, especializada em criar soluções visuais e estratégias digitais que conectam marcas ao seu público-alvo. Focada em fornecer serviços inovadores, criativos e eficientes para empresas, instituições e empreendedores.</p>
-                        <p>Actuamos com profissionalismo, compromisso e visão estratégica, ajudando os nossos clientes a crescer através do design e do marketing digital.</p>
-                        <div class="destaque">✦ Transformamos ideias em resultados criativos.</div>
+    <!-- CONTEÚDO PRINCIPAL (Inspirado na image_6fea9a.png) -->
+    <section class="contato-corpo">
+        <div class="container grid-contato-novo">
+            
+            <!-- Coluna Esquerda: Cartões de Informação -->
+            <div class="coluna-informacao">
+                <div class="card-info-linha">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-location-dot"></i>
                     </div>
-                    
-                    <!-- Informações de Contato com IMAGENS -->
-                    <div class="info-card">
-                        <h3>Contacto</h3>
-                        
-                        <!-- Email - SUBSTITUA a imagem -->
-                        <div class="info-item" onclick="window.location.href='mailto:info@anigriv.co.mz'">
-                            <img src="img/email.png" alt="Email" class="info-icon-img" onerror="this.src='https://placehold.co/45x45/6B2D8C/white?text=✉️'">
-                            <div class="info-details">
-                                <p>info@anigriv.co.mz</p>
-                                <span class="small">Envie-nos um e-mail</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Telefone - SUBSTITUA a imagem -->
-                        <div class="info-item" onclick="window.location.href='tel:+258843799612'">
-                            <img src="img/call (1).png" alt="Telefone" class="info-icon-img" onerror="this.src='https://placehold.co/45x45/6B2D8C/white?text=📱'">
-                            <div class="info-details">
-                                <p>+258 84 379 9612</p>
-                                <span class="small">Ligue ou WhatsApp</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Endereço - SUBSTITUA a imagem -->
-                        <div class="info-item">
-                            <img src="img/location.png" alt="Localização" class="info-icon-img" onerror="this.src='https://placehold.co/45x45/6B2D8C/white?text=📍'">
-                            <div class="info-details">
-                                <p>Rua Coronel Aurélio Manave, Nº 178</p>
-                                <span class="small">Maputo, Moçambique</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Horário - SUBSTITUA a imagem -->
-                        <div class="info-item">
-                            <img src="img/clock.png" alt="Horário" class="info-icon-img" onerror="this.src='https://placehold.co/45x45/6B2D8C/white?text=🕒'">
-                            <div class="info-details">
-                                <p>Segunda a Sexta: 9h - 18h</p>
-                                <span class="small">Sábado: 9h - 13h</span>
-                            </div>
-                        </div>
+                    <div class="card-info-texto">
+                        <span>Endereço</span>
+                        <p>Rua Coronel Aurélio Manave, Nº 178 Maputo</p>
                     </div>
                 </div>
+
+                <div class="card-info-linha" onclick="window.location.href='tel:+258842504825'">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="card-info-texto">
+                        <span>Telefone</span>
+                        <p>+258 84 250 4825</p>
+                    </div>
+                </div>
+
+                <div class="card-info-linha" onclick="window.location.href='mailto:designer@anigriv.co.mz'">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="card-info-texto">
+                        <span>E-mail</span>
+                        <p>designer@anigriv.co.mz</p>
+                    </div>
+                </div>
+
+                <div class="card-info-linha">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="card-info-texto">
+                        <span>Horário</span>
+                        <p>Segunda a Sexta: 8h00 – 17h00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Direita: Chamada para Ação e Grelha de Botões -->
+            <div class="coluna-conversao">
+                <!-- <div class="tag-badge secundario">Vamos Conversar</div> -->
+                <h2>Mais estrutura e resultados para o seu negócio.</h2>
+                <p class="desc-conversao">Seja para impulsionar a sua presença digital, criar campanhas de marketing de alto impacto ou desenhar soluções de comunicação integradas, a Anigriv está disponível para apoiar a sua marca.</p>
                 
-                <!-- Coluna Direita: Mapa -->
-                <div>
-                    <div class="mapa-card">
-                       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d896.7892337341972!2d32.589389!3d-25.962893!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee69bac6a8c1447%3A0xec2b77d2bfc73f39!2sR.%20do%20Cmte.%20Joao%20Bello%2C%20Maputo!5e0!3m2!1spt-PT!2smz!4v1780495421900!5m2!1spt-PT!2smz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <div class="mapa-info">
-                            <p>📍 Rua do Comandante João Belo, Maputo</p>
+                <!-- Grelha 2x2 de Ações Rápidas -->
+                <div class="grelha-acoes">
+                    <a href="https://wa.me/258842504825" target="_blank" rel="noopener noreferrer" class="card-acao">
+                        <div class="icon-box-small">
+                            <i class="fa-brands fa-whatsapp"></i>
                         </div>
-                        <div class="mapa-footer">
-                            <span>🔍 Atalhos de teclado</span>
-                            <span>📊 Dados do mapa ©2026</span>
-                            <span>⚙️ Termos</span>
-                            <span>🚨 Comunicar um erro no mapa</span>
+                        <div class="card-acao-texto">
+                            <h4>WhatsApp</h4>
+                            <p>Iniciar conversa agora</p>
                         </div>
-                    </div>
-                    
-                    <!-- Locais Próximos -->
-                    <div class="locais-proximos">
-                        <div class="locais-title">📍 Referências próximas:</div>
-                        <div class="locais-tags">
-                            <span class="local-tag">Terceira (3ª) Esquadra</span>
-                            <span class="local-tag">Greek Consulate</span>
-                            <span class="local-tag">Co-gle</span>
-                            <span class="local-tag">Cine Group</span>
-                            <span class="local-tag">Arnaud Logis Moçambique</span>
-                            <span class="local-tag">Marismoz</span>
-                            <span class="local-tag">Marisco</span>
+                    </a>
+
+                    <a href="mailto:designer@anigriv.co.mz" class="card-acao">
+                        <div class="icon-box-small">
+                            <i class="fa-solid fa-envelope"></i>
                         </div>
-                    </div>
+                        <div class="card-acao-texto">
+                            <h4>E-mail</h4>
+                            <p>Enviar pedido de informação</p>
+                        </div>
+                    </a>
+
+                    <a href="tel:+258842504825" class="card-acao">
+                        <div class="icon-box-small">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="card-acao-texto">
+                            <h4>Ligar</h4>
+                            <p>Falar com a equipa</p>
+                        </div>
+                    </a>
+
+                    <a href="servicos.html" class="card-acao">
+                        <div class="icon-box-small">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div class="card-acao-texto">
+                            <h4>Serviços</h4>
+                            <p>Ver serviços disponíveis</p>
+                        </div>
+                    </a>
                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECÇÃO DO MAPA (Posicionado em baixo de forma expandida) -->
+    <section class="seccon-mapa">
+        <div class="container">
+            <div class="mapa-card-novo">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.1569227425334!2d32.5893891!3d-25.9628934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee69bac6a8c1447%3A0xec2b77d2bfc73f39!2sR.%20do%20Cmte.%20Joao%20Bello%2C%20Maputo!5e0!3m2!1spt-PT!2smz!4v1780936470830!5m2!1spt-PT!2smz" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="img/Artboard 2.png" alt="Anigriv Logo">
+                <div class="footer-column brand-info">
+                    <div class="footer-logo">
+                        <img src="img/Artboard 2.png" alt="Anigriv Logo">
+                    </div>
                     <p>Comunicação e Marketing Digital que transformam ideias em resultados.</p>
-                </div>
-                 
-                <div class="footer-column">
-                    <h4>Contacto</h4>
-                    
-                    <div class="footer-contact-item" onclick="window.location.href='tel:+258843799612'">
-                        <img src="img/call (1).png" alt="Telefone" class="footer-icon" onerror="this.src='https://placehold.co/32x32/6B2D8C/white?text=📱'">
-                        <span>+258 84 379 9612</span>
-                    </div>
-                    
-                    <div class="footer-contact-item" onclick="window.location.href='mailto:info@anigriv.co.mz'">
-                        <img src="img/email.png" alt="Email" class="footer-icon" onerror="this.src='https://placehold.co/32x32/6B2D8C/white?text=✉️'">
-                        <span>info@anigriv.co.mz</span>
-                    </div>
-                    
-                    <div class="footer-contact-item">
-                        <img src="img/clock.png" alt="Horário" class="footer-icon" onerror="this.src='https://placehold.co/32x32/6B2D8C/white?text=🕒'">
-                        <span>Seg-Sex: 9h às 18h</span>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/profile.php?id=61590238301459" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a> 
+                        <a href="https://www.instagram.com/anigriv.mz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>    
+                        <a href="https://www.tiktok.com/@anigriv_mz?lang=pt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a> 
+                        <a href="https://www.linkedin.com/company/anigriv_mz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Sobre Nós</h4>
-                    <a href="sobre.html">Sobre Nós</a>
-                   
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item" onclick="window.location.href='tel:+258842504825'">
+                        <i class="fa-solid fa-phone footer-icon-fa"></i>
+                        <span>+258 84 250 4825</span>
+                    </div>
+                    <div class="footer-contact-item" onclick="window.location.href='mailto:designer@anigriv.co.mz'">
+                        <i class="fa-solid fa-envelope footer-icon-fa"></i>
+                        <span>designer@anigriv.co.mz</span>
+                    </div>
+                    <div class="footer-contact-item schedule-item">
+                        <i class="fa-solid fa-clock footer-icon-fa"></i>
+                        <span>Seg - Sex: 8h às 17h</span>
+                    </div>
                 </div>
+
+                <div class="footer-column">
+                    <h4>Navegação</h4>
+                    <a href="sobre.html">Sobre Nós</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="index.html#portfolio">Portfólio</a>
+                    <a href="contato.html">Contacte-nos</a>
+                </div>
+
                 <div class="footer-column">
                     <h4>Localização</h4>
-                   <img src="img/location.png" alt="Localização" class="footer-icon" onerror="this.src='https://placehold.co/32x32/6B2D8C/white?text=📍'">
-                        <span>Maputo, Moçambique</span>
-                </div>
-                
-                 <div class="footer-contact-item">
-                    <h4>Localização</h4>
-                        <img src="img/location.png" alt="Localização" class="footer-icon" onerror="this.src='https://placehold.co/32x32/6B2D8C/white?text=📍'">
-                        <span>Maputo, Moçambique</span>
+                    <div class="footer-contact-item no-click">
+                        <i class="fa-solid fa-location-dot footer-icon-fa"></i>
+                        <span>Rua Coronel Aurélio Manave, Nº 178 Maputo</span>
                     </div>
+                </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Anigriv | Comunicação & Marketing Digital. Todos os direitos reservados.</p>
+                <p>© 2026 Anigriv. Todos os direitos reservados.</p>
+                <a href="https://www.braintech.co.mz" target="_blank" rel="noopener noreferrer" class="footer-credits-link">
+                    <div class="footer-credits">
+                        <span>Desenvolvido Pela</span>
+                        <div class="credits-logo">
+                            <img src="img/logo-braintech.png" alt="Braintech Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23bfa6d1\'><path d=\'M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.79-2.79C10.09 18.64 11.03 19 12 19c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z\'/></svg>'">
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/258843799612" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/258842504825" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <img src="img/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/1384/1384023.png'">
     </a>
-    
-    <!-- Back to Top -->
-    <button id="backToTop" class="back-to-top">↑</button>
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
 
-    <script>
-        // Menu Mobile
-        const menuMobile = document.getElementById('menuMobile');
-        const navLinks = document.getElementById('navLinks');
-        
-        if (menuMobile) {
-            menuMobile.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        }
-        
-        // Back to Top
-        const backToTop = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.style.display = 'flex';
-            } else {
-                backToTop.style.display = 'none';
-            }
-        });
-        
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Fechar menu ao clicar em link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="contato.js"></script>
 </body>
 </html>
