@@ -158,31 +158,31 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1, 
             title: "Produção Audiovisual", 
             description: "Criamos vídeos institucionais de alta qualidade, campanhas e materiais em vídeo impactantes de padrão cinematográfico.", 
-            videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-womans-hands-typing-on-a-laptop-43224-large.mp4"
+            videoSrc: "vids/Editado1.mp4"
         },
         { 
             id: 2, 
             title: "Marketing Digital", 
             description: "Posicionamento estratégico de marca focado em engajamento, consistência visual e crescimento de comunidades orgânicas.", 
-            imageSrc: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80"
+            imageSrc: "img/anig2.jpeg"
         },
         { 
             id: 3, 
             title: "Design Gráfico", 
             description: "Criação de identidades visuais corporativas, logótipos minimalistas, panfletos, cartazes e peças publicitárias exclusivas.", 
-            imageSrc: "https://images.unsplash.com/photo-1561070791-26c113006238?auto=format&fit=crop&w=800&q=80"
+            imageSrc: "img/hartbeat.jpeg"
         },
         { 
             id: 4, 
             title: "Gestão de Tráfego Pago", 
             description: "Configuração e otimização de anúncios patrocinados para maximizar leads, vendas e o retorno do seu investimento real.", 
-            imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+            imageSrc: "img/anig1.jpeg"
         },
         { 
             id: 5, 
             title: "Impressão e Produção Gráfica", 
             description: "Materialização da sua comunicação em suportes físicos com acabamento premium e excelente fidelidade de cores.", 
-            imageSrc: "img/hartbeat.jpeg"
+            imageSrc: "img/anig3.jpeg"
         }
     ];
 

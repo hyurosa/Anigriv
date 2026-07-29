@@ -35,7 +35,7 @@ body.dark-mode {
 }
 
 body {
-    font-family: 'Inter', sans-serif; /* Fonte padrão mantida */
+    font-family: 'DM Sans', sans-serif; /* Fonte padrão mantida */
     background-color: var(--bg-body);
     color: var(--text-dark);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -239,7 +239,7 @@ body.dark-mode .theme-toggle .sun-icon {
 
 .hero-contato-novo h1 {
     font-size: 3.2rem; /* Retornado para a escala original */
-    font-family: 'Inter', sans-serif; /* Alterado de volta para Inter */
+     font-family: 'DM Sans', sans-serif; /* Alterado de volta para Inter */
     font-weight: 700;
     color: var(--white);
     max-width: 850px;
