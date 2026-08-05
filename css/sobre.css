@@ -6,10 +6,10 @@
     --primary-light: #6B2D8C;
     --primary-soft: #E8D5F5;
     --white: #ffffff;
-    --bg-body: #ffffff;
+    --bg-body: #efebeb;
     --bg-card: #6B2D8C; 
     --text-dark: #2D1B3D;
-    --text-light: #555555;
+    --text-light: #000000;
     --border-line: #eeeeee;
     --circle-bg: #F4EDFA;
 }
@@ -18,7 +18,7 @@ body.dark-mode {
     --bg-body: #110219;
     --bg-card: #230433;
     --text-dark: #f1e6fa;
-    --text-light: #b393cd;
+    --text-light: white;
     --border-line: #2e1242;
     --circle-bg: #2a0c3b;
 }
@@ -187,7 +187,7 @@ body.dark-mode .brand-logo-holder .animated-logo { filter: brightness(0) invert(
 
 .info-block {
     padding-left: 20px;
-    border-left: 2px solid var(--primary-light); /* Linha vertical do card */
+    border-left: 2px solid var(#110219); /* Linha vertical do card */
     transition: border-color 0.3s;
 }
 body.dark-mode .info-block {

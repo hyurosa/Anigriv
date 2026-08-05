@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Digital - Anigriv</title>
+    <!-- Link para o seu CSS padrão -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Estilos exclusivos para a página de trabalhos internos -->
+    <style>
+        .page-header {
+            padding: 140px 0 40px;
+            text-align: center;
+            background: var(--bg-secoes);
+        }
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+        .btn-back:hover { color: var(--primary-dark); }
+        
+        /* Grelha de trabalhos relacionados */
+        .trabalhos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 50px 0;
+        }
+        .trabalho-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px var(--box-shadow-color);
+            border: 1px solid var(--form-border);
+            transition: transform 0.3s ease;
+        }
+        .trabalho-item:hover { transform: translateY(-5px); }
+        .trabalho-thumb { width: 100%; height: 220px; object-fit: cover; }
+        .trabalho-info { padding: 20px; }
+        .trabalho-info h3 { font-size: 1.25rem; margin-bottom: 8px; color: var(--text-principal); }
+        .trabalho-info p { color: var(--text-suave); font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Mantenha a sua estrutura de NAVBAR idêntica aqui para navegação -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-text">
+                        <h1>Anigriv</h1>
+                        <p>Design & Marketing Digital</p>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#servicos" class="active">Serviços</a></li>
+                    <li><a href="index.html#portfolio">Portfólio</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cabeçalho da página do Serviço -->
+    <section class="page-header">
+        <div class="container">
+            <a href="index.html#servicos" class="btn-back">← Voltar para Serviços</a>
+            <h1>Design Digital</h1>
+            <p>Conheça os projetos recentes e soluções visuais criadas pelo nosso time.</p>
+        </div>
+    </section>
+
+    <!-- Seção de Trabalhos Relacionados -->
+    <main class="container">
+        <div class="trabalhos-grid">
+            
+            <!-- Trabalho 1 -->
+            <div class="trabalho-item">
+                <img src="trabalho1.jpg" alt="Projeto de Branding" class="trabalho-thumb">
+                <div class="trabalho-info">
+                    <h3>Redesign de Marca - Cliente X</h3>
+                    <p>Modernização da identidade visual, tipografia e manual de marca completo.</p>
+                </div>
+            </div>
+
+            <!-- Trabalho 2 -->
+            <div class="trabalho-item">
+                <img src="trabalho2.jpg" alt="Interface UI/UX" class="trabalho-thumb">
+                <div class="trabalho-info">
+                    <h3>E-commerce UI/UX Design</h3>
+                    <p>Criação de protótipos de alta fidelidade focados em conversão para web e mobile.</p>
+                </div>
+            </div>
+
+            <!-- Trabalho 3 -->
+            <div class="trabalho-item">
+                <img src="trabalho3.jpg" alt="Social Media Arts" class="trabalho-thumb">
+                <div class="trabalho-info">
+                    <h3>Campanha Visual Conceitual</h3>
+                    <p>Direção de arte desenvolvida para lançamentos digitais de grande escala.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Opcional: Insira o seu Footer padrão aqui para finalizar a página -->
+
+</body>
+</html>

@@ -32,12 +32,6 @@ html {
     --shadow-xl: 0 25px 50px rgba(0,0,0,0.15);
 }
 
-.logo-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
 html[data-theme="dark"] {
     --bg-body: #120A1C;
     --bg-secoes: linear-gradient(135deg, #120A1C 0%, #1A0F26 50%, #251433 100%);
@@ -62,19 +56,24 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Alinhado com a nova Navbar compacta */
+    padding: 0 20px;
     position: relative;
     z-index: 2;
 }
 
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 /* ==========================================================================
-   MODIFICAÇÃO: NAVBAR COMPACTA & PADRONIZADA (Sincronizada com servicos.css)
+   NAVBAR COMPACTA & PADRONIZADA
    ========================================================================== */
 header {
     background: var(--primary);
     position: fixed; 
     width: 100%;
-    /* padding: ; */
     top: 0;
     left: 0;
     z-index: 1000;
@@ -85,7 +84,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    padding: 15px 0; /* Padding vertical idêntico aos outros arquivos */
+    padding: 15px 0;
 }
 
 .logo {
@@ -142,7 +141,7 @@ nav {
 }
 
 /* ==========================================================================
-   MODIFICAÇÃO: THEME TOGGLE & MOBILE PADRONIZADOS
+   THEME TOGGLE & MOBILE PADRONIZADOS
    ========================================================================== */
 .theme-toggle {
     background: transparent; 
@@ -157,7 +156,7 @@ nav {
     color: var(--white);
     position: relative;
     transition: all 0.3s;
-    margin-left: 0; /* Removido margem desnecessária */
+    margin-left: 0;
 }
 
 .theme-toggle:hover {
@@ -207,17 +206,17 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
 }
 
 /* ==========================================================================
-   HERO AJUSTADO: VÍDEO ATÉ O TOPO E JUNTO À NAVBAR
+   HERO: VÍDEO ATÉ O TOPO
    ========================================================================== */
 .hero {
     position: relative;
-    min-height: 100vh; /* Mantém a altura total para a página inicial */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
-    margin-top: 0; /* Removido o espaço para o vídeo subir até o topo */
-    padding-top: 75px; /* Adiciona o recuo interno apenas para o conteúdo não ficar sob a navbar */
-    background: #000; /* Fundo preto neutro apenas enquanto o vídeo carrega */
+    margin-top: 0;
+    padding-top: 75px;
+    background: #000;
 }
 
 .hero-video-background {
@@ -242,7 +241,6 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     object-fit: cover;
 }
 
-/* O overlay agora é escuro e translúcido, permitindo ver o vídeo claramente de ponta a ponta */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -310,39 +308,42 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     flex-wrap: wrap;
 }
 
-/* Ajuste fino de responsividade para Mobile */
-@media (max-width: 768px) {
-    .hero {
-        padding-top: 65px; /* Alinha com o tamanho menor da navbar mobile */
-        min-height: 80vh;
-    }
-    
-    .hero-content {
-        padding: 40px 0;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-    
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
+/* ==========================================================================
+   SERVIÇOS (CARD STACK) - ATUALIZADO (Cards Menores e Título Mais Alto)
+   ========================================================================== */
 .servicos {
     background: var(--bg-secoes);
-    /* Alterado de 5rem 0 para 2.5rem 0 5rem 0 (menos espaço em cima, mantém o espaço embaixo) */
-    padding: 2.5rem 0 5rem 0; 
+    padding: 1rem 0 5rem 0; /* Reduzido de 2.5rem para 1rem para subir o título */
     transition: background 0.3s;
     overflow: hidden;
 }
 
 .section-header {
     text-align: center;
-    /* Alterado de 50px para 30px para aproximar os cards do título */
     margin-bottom: 30px; 
 }
+
+.subtitle {
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-header p {
+    color: var(--text-suave);
+}
+
 .card-stack-container {
     width: 100%;
     max-width: 600px;
@@ -356,12 +357,13 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
 .stage {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 350px; /* Reduzido de 400px para 350px para acompanhar os cards menores */
     display: flex;
     align-items: flex-end;
     justify-content: center;
     perspective: 1100px; 
     outline: none;
+    transition: filter 0.2s ease, opacity 0.2s ease;
 }
 
 .spotlight {
@@ -378,11 +380,19 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     z-index: 0;
 }
 
-.stage {
-    transition: filter 0.2s ease, opacity 0.2s ease;
-}
-
 .card-service {
+    position: absolute;
+    bottom: 0;
+    width: 460px;  /* Reduzido de 520px para 460px */
+    height: 280px; /* Reduzido de 320px para 280px */
+    border-radius: 16px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    box-shadow: 0 20px 35px var(--box-shadow-color);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+    color: #ffffff; 
     transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), 
                 opacity 0.4s ease, 
                 border-color 0.3s ease, 
@@ -395,29 +405,11 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
 }
 
 .card-service-content {
-    transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.card-service {
-    position: absolute;
-    bottom: 0;
-    width: 520px;
-    height: 320px;
-    border-radius: 16px;
-    border: 4px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    box-shadow: 0 20px 35px var(--box-shadow-color);
-    cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
-    transform-style: preserve-3d;
-    will-change: transform, opacity;
-}
-
-.card-service-content {
     position: relative;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
+    transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .card-service img, .card-service video {
@@ -440,13 +432,13 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 24px;
+    padding: 20px; /* Reduzido levemente para harmonizar com o card menor */
     color: var(--white);
     z-index: 10;
 }
 
 .card-service-title {
-    font-size: 1.35rem;
+    font-size: 1.25rem; /* Ajustado de 1.35rem para 1.25rem */
     font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
@@ -454,12 +446,12 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     background: linear-gradient(135deg, #ffffff 0%, #E8D5F5 100%);
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: #ffffff;
 }
 
 .card-service-description {
     margin-top: 6px;
-    font-size: 0.95rem;
+    font-size: 0.9rem; /* Ajustado de 0.95rem para 0.9rem */
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.5;
     display: -webkit-box;
@@ -479,8 +471,9 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     box-shadow: 0 25px 50px rgba(145, 43, 203, 0.45);
 }
 
+/* Controles Base */
 .dots-container {
-    margin-top: 28px;
+    margin-top: 24px;
     display: flex;
     gap: 16px;
     justify-content: center;
@@ -494,77 +487,10 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     align-items: center;
 }
 
-/* --- CONFIGURAÇÃO PADRÃO DA SEÇÃO (TEMA ESCURO) --- */
-.card-service {
-    /* Elementos de texto principais em Branco no modo Escuro */
-    color: #ffffff; 
-}
-
-.card-service-title {
-    color: #ffffff;
-    font-weight: 700;
-}
-
-.card-service-description {
-    color: rgba(255, 255, 255, 0.85); /* Branco com leve opacidade para leitura confortável */
-}
-
-/* Setas de navegação e dots padrão (Tema Escuro) */
-.nav-arrow {
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.dot {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-.dot.active {
-    background-color: #ffffff; /* Dot ativo totalmente branco */
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-}
-
-
-/* ==========================================================================
-   ADAPTAÇÃO PARA O MODO CLARO (Controlado por [data-theme="light"])
-   ========================================================================== */
-   
-[data-theme="light"] .card-service {
-    /* Background do card ligeiramente suavizado para contrastar com o roxo */
-    background-color: #fcfaff; 
-}
-
-[data-theme="light"] .card-service-title {
-    color: #4a154b; /* Roxo escuro e imponente para o título principal */
-}
-
-[data-theme="light"] .card-service-description {
-    color: #6b4375; /* Tom de roxo médio para o corpo do texto */
-}
-
-/* Setas de navegação e dots adaptados para Roxo (Tema Claro) */
-[data-theme="light"] .nav-arrow {
-    color: #8a2be2; /* Ícone da seta em roxo */
-    border: 1px solid rgba(138, 43, 226, 0.4);
-    background: rgba(138, 43, 226, 0.05);
-}
-
-[data-theme="light"] .nav-arrow:hover {
-    background: rgba(138, 43, 226, 0.15);
-}
-
-[data-theme="light"] .dot {
-    background-color: rgba(138, 43, 226, 0.3); /* Dots inativos em roxo suave */
-}
-
-[data-theme="light"] .dot.active {
-    background-color: #8a2be2; /* Dot ativo na cor roxa do sistema */
-    box-shadow: 0 0 8px rgba(138, 43, 226, 0.4);
-}
 .nav-arrow {
     background: rgba(145, 43, 203, 0.1);
     border: 1.5px solid rgba(145, 43, 203, 0.25);
-    color: var(--text-principal);
+    color: #ffffff;
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -588,51 +514,55 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     box-shadow: 0 4px 12px rgba(145, 43, 203, 0.3);
 }
 
-.nav-arrow.prev:hover svg {
-    transform: translateX(-2px);
-}
-
-.nav-arrow.next:hover svg {
-    transform: translateX(2px);
-}
+.nav-arrow.prev:hover svg { transform: translateX(-2px); }
+.nav-arrow.next:hover svg { transform: translateX(2px); }
 
 .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: var(--text-suave);
-    opacity: 0.4;
+    background-color: rgba(255, 255, 255, 0.3);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .dot.active {
-    background-color: #912bcb;
-    opacity: 1;
+    background-color: #ffffff;
     transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-.dot:hover:not(.active) {
-    opacity: 0.7;
+.dot:hover:not(.active) { opacity: 0.7; }
+
+/* Temas específicos para os Cards */
+[data-theme="light"] .card-service { background-color: #fcfaff; }
+[data-theme="light"] .card-service-title { color: #4a154b; -webkit-text-fill-color: initial; background: none; }
+[data-theme="light"] .card-service-description { color: #6b4375; }
+[data-theme="light"] .nav-arrow { color: #8a2be2; border: 1px solid rgba(138, 43, 226, 0.4); background: rgba(138, 43, 226, 0.05); }
+[data-theme="light"] .nav-arrow:hover { background: rgba(138, 43, 226, 0.15); color: #fff; }
+[data-theme="light"] .dot { background-color: rgba(138, 43, 226, 0.3); }
+[data-theme="light"] .dot.active { background-color: #8a2be2; box-shadow: 0 0 8px rgba(138, 43, 226, 0.4); }
+
+
+/* ==========================================================================
+   MEDIA QUERIES (Ajustado para os novos tamanhos)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* ... mantenha suas regras anteriores aqui ... */
+    .card-stack-container { max-width: 100%; overflow: hidden; padding: 10px 0; }
 }
 
 @media (max-width: 640px) {
-    .stage {
-        height: 320px;
-    }
-    .card-service {
-        width: 90vw;
-        height: 250px;
-    }
-    .card-service-title {
-        font-size: 1.15rem;
-    }
-    .card-service-description {
-        font-size: 0.85rem;
-    }
+    .stage { height: 280px; } /* Ajustado proporcionalmente para telas pequenas */
+    .card-service { width: 90vw; height: 220px; } /* Mantém a largura responsiva com altura menor */
+    .card-service-title { font-size: 1.15rem; }
+    .card-service-description { font-size: 0.85rem; }
 }
 
+/* ==========================================================================
+   PORTFÓLIO
+   ========================================================================== */
 #portfolio {
     background: var(--bg-body);
     padding: 5rem 0;
@@ -645,6 +575,31 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     padding: 0 2rem;
 }
  
+/* ==========================================================================
+   CABEÇALHO DO PORTFÓLIO (Apenas H2 e Compacto)
+   ========================================================================== */
+#portfolio {
+    background: var(--bg-body);
+    padding: 2rem 0 5rem 0; /* Reduzido o topo para colar na seção de cima */
+    transition: background 0.3s;
+}
+
+.section-header-portfolio {
+    text-align: center;
+    margin-bottom: 15px; /* Reduzido drasticamente para colar nos cards abaixo */
+}
+
+.section-header-portfolio h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: 'DM Sans', serif;
+    font-weight: 700;
+}
+
 .pa-inner {
     display: flex;
     align-items: center;
@@ -671,9 +626,9 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
 }
  
 .pa-left .dyn-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'DM Sans', serif;
     font-size: 2.2rem;
-    font-weight: 700;
+    font-weight: 800; /* Alterado para 800 (Super Negrito) */
     color: var(--text-principal);
     line-height: 1.2;
     min-height: 5.3rem;
@@ -683,7 +638,7 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
 .pa-left .dyn-cat {
     font-family: 'DM Sans', sans-serif;
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 700; /* Alterado de 500 para 700 (Negrito Destacado) */
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #912bcb;
@@ -755,9 +710,7 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
  
 .pa-card.active { flex: 4; }
  
-.pa-card img,
-.pa-card video,
-.portfolio-video {
+.pa-card img, .pa-card video, .portfolio-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -811,11 +764,7 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     transition: opacity 0.3s 0.12s ease, transform 0.3s 0.12s ease;
 }
  
-.pa-card.active .lbl-name {
-    opacity: 1;
-    transform: translateY(0);
-}
- 
+.pa-card.active .lbl-name { opacity: 1; transform: translateY(0); }
 .pa-card-label .lbl-num {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px;
@@ -845,8 +794,15 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
  
 .pa-card.active .lbl-dot { opacity: 1; }
 
+/* Altera apenas o fundo do portfólio no Modo Claro */
+html:not([data-theme="dark"]) #portfolio {
+    /* background-color: #dedee2; Substitua este código pelo cinza ou cor que você desejar */
+    background-color: #f5f5f5; /* Um cinza claro mais suave */
+}
 
-
+/* ==========================================================================
+   BOTÕES & PARCEIROS
+   ========================================================================== */
 .btn-primary {
     background: white;
     color: var(--primary);
@@ -869,7 +825,6 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
 
 .parceiros {
     background: var(--bg-body);
-    /* Alterado de 6rem 0 para 3rem 0 5rem 0 (menos espaço em cima do título, mantém um bom espaço embaixo) */
     padding: 3rem 0 5rem 0;
     transition: background 0.3s;
     border-top: 1px solid var(--form-border);
@@ -881,7 +836,6 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     gap: 40px 50px;
     align-items: center;
     justify-items: center;
-    /* Reduzido ligeiramente de 50px para 35px para aproximar as marcas do título */
     margin-top: 35px;
     max-width: 1000px;
     margin-left: auto;
@@ -902,199 +856,97 @@ html[data-theme="dark"] .theme-toggle .sun-icon {
     max-width: 75%;
     max-height: 55px;
     object-fit: contain;
-    /* Aplica o filtro monocromático idêntico ao da imagem */
-    filter: grayscale(100%) contrast(120%) opacity(45%);
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.brand-item:hover {
-    transform: scale(1.05);
-}
-
-.partner-logo a {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.partner-logo img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    pointer-events: none; /* Garante que o clique seja registrado diretamente no link <a> */
-}
-
-/* ==========================================================================
-   ÁREA DOS PARCEIROS (CORES ORIGINAIS POR PADRÃO)
-   ========================================================================== */
-
-/* Tema Claro: Todos os logos aparecem com cores originais e opacidade total */
-.brand-item img {
     filter: none !important;
     opacity: 1 !important;
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Garante que o logo da Braintech (que é branco original) ganhe cor escura no modo claro para não sumir */
 .brand-item[href*="braintech.co.mz"] img {
     filter: grayscale(100%) brightness(0.2) opacity(100%) !important;
 }
 
-/* Tema Escuro: Mantém as cores originais, apenas ajustando o brilho se necessário */
-html[data-theme="dark"] .brand-item img {
-    filter: none !important;
-    opacity: 1 !important;
-}
+html[data-theme="dark"] .brand-item img { filter: none !important; opacity: 1 !important; }
+html[data-theme="dark"] .brand-item .dark-invert { filter: brightness(1.3) contrast(1.1) !important; }
+html[data-theme="dark"] .brand-item[href*="braintech.co.mz"] img { filter: none !important; }
+.brand-item:hover { transform: scale(1.05); }
 
-/* Ajuste inteligente para os logos escuros (dark-invert) não sumirem no fundo escuro */
-/* Eles ganham um filtro invertido suave para ficarem perfeitamente visíveis e coloridos */
-html[data-theme="dark"] .brand-item .dark-invert {
-    filter: brightness(1.3) contrast(1.1) !important;
-}
+.partner-logo a { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; cursor: pointer; }
+.partner-logo img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }
 
-/* O logo da Braintech volta a ser branco no modo escuro */
-html[data-theme="dark"] .brand-item[href*="braintech.co.mz"] img {
-    filter: none !important;
-}
 
-/* Efeito de escala ao passar o mouse (hover) mantido para dar dinamismo */
-.brand-item:hover {
-    transform: scale(1.05);
-}
-
-@media (max-width: 968px) {
-    .parceiros-brand-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 35px 30px;
-    }
-}
-
-@media (max-width: 600px) {
-    .parceiros-brand-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px 20px;
-    }
-    .brand-item {
-        height: 70px;
-    }
-    .brand-item img {
-        max-width: 85%;
-        max-height: 45px;
-    }
-}
-
-/* --- SEÇÃO PARCEIROS COM FUNDO ROXO ADAPTATIVO --- */
+/* ==========================================================================
+   PARCEIROS (Logos no tamanho original + seção colada no rodapé)
+   ========================================================================== */
 .partners-section {
-    /* Fundo padrão: Roxo profundo para o modo escuro (Dark Theme) */
-    /* background-color: #120924;  */
     background-color: #230433;
-    padding: 50px 0 35px 0;
+    padding: 50px 0 20px 0; 
     text-align: center;
     overflow: hidden;
     width: 100%;
     border-top: 1px solid rgba(138, 43, 226, 0.2); 
-    /* Transição suave de cor ao alternar os temas */
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 0; /* Mantém colado ao rodapé */
 }
 
 .partners-section h2 {
-    /* Texto claro no modo escuro */
     color: #ffffff;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 45px;
+    margin-bottom: 25px; 
     position: relative;
     display: inline-block;
     font-family: sans-serif;
     transition: color 0.3s ease;
 }
 
-/* Linha decorativa abaixo do título */
-.partners-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
-    height: 4px;
-    /* Roxo elétrico em degradê para dar destaque sobre o fundo */
-    background: linear-gradient(90deg, #8a2be2, #ba55d3); 
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
+.partners-carousel { 
+    overflow: hidden; 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    padding: 15px 0; /* Devolvido o padding original de 15px */
 }
 
-.partners-carousel {
-    overflow: hidden;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 15px 0;
+.partners-track { 
+    display: flex; 
+    width: max-content; 
+    gap: 30px; /* Mantém a distância encurtada entre os logos */
+    animation: scrollInfinite 30s linear infinite; 
 }
 
-.partners-track {
-    display: flex;
-    width: max-content;
-    gap: 65px;
-    animation: scrollInfinite 30s linear infinite;
+.partner-logo { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 170px;  /* Restaurado o tamanho original */
+    height: 65px;  /* Restaurado o tamanho original */
+    opacity: 0.85; 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
 }
 
-.partner-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 170px; 
-    height: 65px;
-    opacity: 0.85;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+.partner-logo:hover { 
+    opacity: 1; 
+    transform: scale(1.08); 
 }
 
-.partner-logo:hover {
-    opacity: 1;
-    transform: scale(1.08);
+.partner-logo img { 
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
 }
 
-.partner-logo img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+@keyframes scrollInfinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 15px)); }
 }
 
 /* ==========================================================================
-   ADAPTAÇÃO PARA O MODO CLARO (Controlado dinamicamente pelo seu script.js)
+   FOOTER (Mais Próximo e Compacto)
    ========================================================================== */
-[data-theme="light"] .partners-section {
-    /* Roxo pastel bem suave e limpo para o fundo no modo claro */
-    background-color: #f4effc; 
-    border-top-color: rgba(138, 43, 226, 0.1);
-}
-
-[data-theme="light"] .partners-section h2 {
-    /* Texto escuro contratante para leitura perfeita no modo claro */
-    color: #2b144d; 
-}
-
-/* Pausa suave da animação ao passar o cursor */
-.partners-track:hover {
-    animation-play-state: paused;
-}
-
-/* Animação de loop contínuo */
-@keyframes scrollInfinite {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 32.5px)); 
-    }
-}
 footer { 
     background: #14031f; 
     color: #bfa6d1; 
-    padding: 60px 0 30px; 
+    padding: 40px 0 35px; /* Reduzido o padding-top de 60px para 20px para colar nos parceiros */
     font-size: 0.95rem;
 }
 
@@ -1102,14 +954,23 @@ footer {
     display: grid; 
     grid-template-columns: 1.2fr 1fr 0.8fr 1fr; 
     gap: 40px; 
-    margin-bottom: 40px; 
+    margin-bottom: 15px; /* Reduzido de 40px para 15px para aproximar a linha de baixo */
 }
 
 .footer-column h4 { 
     color: var(--white); 
     font-size: 1.1rem;
-    margin-bottom: 20px; 
+    margin-bottom: 15px; /* Reduzido levemente */
     font-weight: 500;
+}
+
+.footer-bottom { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); 
+    padding-top: 12px; /* Reduzido de 25px para 12px para aproximar os créditos da linha */
+    font-size: 0.85rem; 
 }
 
 .footer-logo img { 
@@ -1118,57 +979,15 @@ footer {
     margin-bottom: 15px;
 }
 
-.brand-info p {
-    line-height: 1.5;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    color: #bfa6d1;
-}
-
-.footer-socials { 
-    display: flex; 
-    gap: 20px; 
-    align-items: center; 
-}
-
-.footer-socials a {
-    color: var(--white);
-    font-size: 1.3rem;
-    text-decoration: none;
-    transition: transform 0.2s, color 0.2s;
-}
-
-.footer-socials a:hover {
-    color: var(--primary-soft);
-    transform: translateY(-2px);
-}
-
-.footer-contact-item { 
-    display: flex; 
-    align-items: flex-start; 
-    gap: 12px; 
-    margin-bottom: 15px; 
-    cursor: pointer; 
-    line-height: 1.4;
-}
+.brand-info p { line-height: 1.5; margin-bottom: 20px; font-size: 0.9rem; color: #bfa6d1; }
+.footer-socials { display: flex; gap: 20px; align-items: center; }
+.footer-socials a { color: var(--white); font-size: 1.3rem; text-decoration: none; transition: transform 0.2s, color 0.2s; }
+.footer-socials a:hover { color: var(--primary-soft); transform: translateY(-2px); }
+.footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; cursor: pointer; line-height: 1.4; }
 .footer-contact-item.no-click { cursor: default; }
 .footer-contact-item.schedule-item { cursor: default; color: #bfa6d1; }
-
-.footer-icon-fa {
-    color: var(--white);
-    font-size: 1.05rem;
-    width: 20px;
-    margin-top: 3px;
-    text-align: center;
-}
-
-.footer-column a { 
-    color: #bfa6d1; 
-    text-decoration: none; 
-    display: block; 
-    margin-bottom: 12px; 
-    transition: color 0.2s;
-}
+.footer-icon-fa { color: var(--white); font-size: 1.05rem; width: 20px; margin-top: 3px; text-align: center; }
+.footer-column a { color: #bfa6d1; text-decoration: none; display: block; margin-bottom: 12px; transition: color 0.2s; }
 .footer-column a:hover { color: var(--white); }
 
 .footer-bottom { 
@@ -1180,54 +999,13 @@ footer {
     font-size: 0.85rem; 
 }
 
-.footer-credits-link {
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.footer-credits-link:hover {
-    transform: translateY(-2px); 
-}
-
-.footer-credits {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 4px;
-}
-
-.footer-credits span {
-    font-size: 0.65rem;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.credits-logo {
-    display: flex;
-    align-items: center;
-}
-
-.credits-logo img {
-    height: 24px; 
-    width: auto;
-    object-fit: contain;
-    filter: brightness(0) invert(1); 
-    opacity: 0.9;
-    transition: opacity 0.2s;
-}
-
-.footer-credits-link:hover .credits-logo img {
-    opacity: 1; 
-}
-
-@media (max-width: 900px) {
-    .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
-    .footer-credits { align-items: center; }
-}
-
-@media (max-width: 500px) {
-    .footer-content { grid-template-columns: 1fr; }
-}
+.footer-credits-link { text-decoration: none; transition: transform 0.2s ease; }
+.footer-credits-link:hover { transform: translateY(-2px); }
+.footer-credits { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.footer-credits span { font-size: 0.65rem; letter-spacing: 1px; color: rgba(255, 255, 255, 0.6); }
+.credits-logo { display: flex; align-items: center; }
+.credits-logo img { height: 24px; width: auto; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; transition: opacity 0.2s; }
+.footer-credits-link:hover .credits-logo img { opacity: 1; }
 
 .whatsapp-btn {
     position: fixed; 
@@ -1245,10 +1023,7 @@ footer {
     animation: pulse 2s infinite;
 }
 
-.whatsapp-img {
-    width: 30px;
-    height: 30px;
-}
+.whatsapp-img { width: 30px; height: 30px; }
 
 .back-to-top {
     position: fixed;
@@ -1268,61 +1043,30 @@ footer {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.back-to-top:hover {
-    transform: translateY(-3px);
-    background: var(--primary-light);
+.back-to-top:hover { transform: translateY(-3px); background: var(--primary-light); }
+
+/* Animações Globais */
+.fade-up { opacity: 0; transform: translateY(30px); animation: fadeUp 0.6s ease forwards; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVIDADE SUBSTANCIAL)
+   ========================================================================== */
+@media (max-width: 968px) {
+    .parceiros-brand-grid { grid-template-columns: repeat(3, 1fr); gap: 35px 30px; }
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
+@media (max-width: 900px) {
+    .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-credits { align-items: center; }
 }
 
-.subtitle {
-    color: var(--primary);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    margin: 10px 0;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.section-header p {
-    color: var(--text-suave);
-}
-
-.fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 0.6s ease forwards;
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-/* RESPONSIVIDADE DA NAVBAR ATUALIZADA */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
         position: absolute;
-        top: 65px; /* Ajustado milimetricamente para bater com o novo tamanho */
+        top: 65px; 
         left: 0;
         right: 0;
         background: var(--primary);
@@ -1332,45 +1076,35 @@ footer {
         box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
-    .nav-links.active {
-        display: flex;
-    }
+    .nav-links.active { display: flex; }
+    .menu-mobile { display: flex; }
+    .theme-toggle { margin-left: auto; }
 
-    .menu-mobile {
-        display: flex;
-    }
+    .hero { padding-top: 65px; min-height: 80vh; }
+    .hero-content { padding: 40px 0; }
+    .hero-content h1 { font-size: 2rem; }
+    .hero-content p { font-size: 1rem; }
 
-    .theme-toggle {
-        margin-left: auto;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .pa-inner { 
-        flex-direction: column; 
-        gap: 2rem; 
-    }
-    .pa-left { 
-        flex: none; 
-        width: 100%; 
-        padding-right: 0; 
-    }
-    .pa-right { 
-        flex: none; 
-        width: 100%; 
-        height: 260px; 
-    }
+    .pa-inner { flex-direction: column; gap: 2rem; min-height: auto; } /* min-height: auto previne quebra de layout */
+    .pa-left { flex: none; width: 100%; padding-right: 0; }
+    .pa-right { flex: none; width: 100%; height: 260px; }
     
-    .card-stack-container {
-        max-width: 100%;
-        overflow: hidden;
-        padding: 10px 0;
-    }
+    .card-stack-container { max-width: 100%; overflow: hidden; padding: 10px 0; }
+}
+
+@media (max-width: 640px) {
+    .stage { height: 320px; }
+    .card-service { width: 90vw; height: 250px; }
+    .card-service-title { font-size: 1.15rem; }
+    .card-service-description { font-size: 0.85rem; }
+}
+
+@media (max-width: 600px) {
+    .parceiros-brand-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; }
+    .brand-item { height: 70px; }
+    .brand-item img { max-width: 85%; max-height: 45px; }
+}
+
+@media (max-width: 500px) {
+    .footer-content { grid-template-columns: 1fr; }
 }
